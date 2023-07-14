@@ -1,0 +1,40 @@
+.form-container {
+    width: max-content;
+    border-radius: 8px;
+    border: 1px gray solid;
+    padding: 2rem;
+    margin: 2rem auto;    
+}
+
+.title, .sub-title {
+    margin: 0.2rem 0;
+    color: black;
+    font-weight: normal;
+}
+
+input {
+    width: calc(100% - 2rem);
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.auth-btn, .add-todo-btn {
+    width: 100%;
+    display: block;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+}
+
+.active-btn {
+    color: #fff;
+    background-color: black;
+    transition: transform 250ms;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.02);
+    }
+}
