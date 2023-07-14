@@ -1,4 +1,6 @@
 import { Routes } from '@angular/router';
+import { inject } from '@angular/core';
+import { TodoService } from './core/services/todo.service';
 
 export const routes: Routes = [
     {
@@ -14,6 +16,7 @@ export const routes: Routes = [
     {
         path:'todos',
         title: 'Todos| TodoApp',
+        canActivate:[()=> inject(TodoService).isLogin()],
         loadComponent: () => import('./components/todo/todo.component'),
     },
     {
