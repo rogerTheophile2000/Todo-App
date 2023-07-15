@@ -19,7 +19,7 @@ import { TodoService } from 'src/app/core/services/todo.service';
       </button>
       <div class="avatar-logout-btn" *ngIf="isLogoutBtnShow">
         <div class="user-avatar">
-          {{ (users | async)![0].email[0] }}
+          {{ firstEmailLetter![0] | uppercase }}
         </div>
         <button 
           class="toolbar-btn" routerLink="/login" 
@@ -89,7 +89,7 @@ export default class ToolbarComponent {
   @Input() isRegisterBtnShow!: boolean;
   @Input() isLogoutBtnShow!: boolean;
 
-  readonly users = inject(TodoService).getUsers();
+  firstEmailLetter = localStorage.getItem('email')
 
   logout = () => localStorage.removeItem('email');
 }

@@ -51,7 +51,7 @@ import { Todo } from 'src/app/core/models/todo.model';
     }
 
     .delete-btn{
-      padding: 0.rem;
+      padding: 0.3rem;
       border-radius: 8px;
       color: white;
       background: red;
