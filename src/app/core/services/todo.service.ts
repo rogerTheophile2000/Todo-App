@@ -1,6 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { AngularTodoDB } from './db';
-import { User } from './user.model';
+import { User } from '../models/user.model';
+import { Todo } from '../models/todo.model';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -22,5 +23,8 @@ export class TodoService {
       this.router.navigate(['login']);
       return false;
     }
-  }
+  };
+
+  // CRUD todos
+  newTodo = (todo : Todo) => this.db.todos.add(todo);
 }

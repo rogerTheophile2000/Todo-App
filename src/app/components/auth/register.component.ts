@@ -4,7 +4,7 @@ import ToolbarComponent from '../shared/toolbar.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { TodoService } from 'src/app/core/services/todo.service';
-import { User } from 'src/app/core/services/user.model';
+import { User } from 'src/app/core/models/user.model';
 
 @Component({
   selector: 'app-login',

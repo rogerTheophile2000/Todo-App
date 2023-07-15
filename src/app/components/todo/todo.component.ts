@@ -2,16 +2,17 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import ToolbarComponent from '../shared/toolbar.component';
 import { TodoService } from 'src/app/core/services/todo.service';
+import { AddTodoComponent } from "./add-todo.component";
 
 @Component({
-  selector: 'app-todo',
-  standalone: true,
-  imports: [CommonModule, ToolbarComponent],
-  template: `
+    selector: 'app-todo',
+    standalone: true,
+    template: `
     <app-toolbar [isLogoutBtnShow]="true"></app-toolbar>
+    <app-add-todo></app-add-todo>
   `,
-  styles: [
-  ]
+    styles: [],
+    imports: [CommonModule, ToolbarComponent, AddTodoComponent]
 })
 export default class TodoComponent {
   
