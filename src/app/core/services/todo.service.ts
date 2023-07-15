@@ -3,6 +3,7 @@ import { AngularTodoDB } from './db';
 import { User } from '../models/user.model';
 import { Todo } from '../models/todo.model';
 import { Router } from '@angular/router';
+import { liveQuery } from 'dexie';
 
 @Injectable({
   providedIn: 'root'
@@ -27,4 +28,7 @@ export class TodoService {
 
   // CRUD todos
   newTodo = (todo : Todo) => this.db.todos.add(todo);
+  getTodos = () => liveQuery(() => this.db.todos.toArray());
+  updateTodo = (todo: Todo) => this.db.todos.update(todo.id!, todo);
+  deleteTodo = (todo: Todo) => this.db.todos.delete(todo.id!);
 }
