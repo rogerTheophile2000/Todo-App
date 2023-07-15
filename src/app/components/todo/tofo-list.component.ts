@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 import { TodoService } from 'src/app/core/services/todo.service';
 import { Todo } from 'src/app/core/models/todo.model';
 
@@ -8,7 +8,7 @@ import { Todo } from 'src/app/core/models/todo.model';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="todo-card-container" *ngFor="let todo in todos$ | async">
+    <div class="todo-card-container" *ngFor="let todo of todos$ | async">
       <div class="todo-content">
         <input type="checkbox" name="done" [checked]="todo.done" (click)="updateTodo(todo)">
         <div class="titile-desc" [ngClass]="{done: todo.done}">
